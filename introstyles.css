@@ -107,8 +107,8 @@
     -moz-border-radius: 100%;
     -webkit-border-radius: 100%;
     border-radius: 100%;
-    border: 1px solid rgba(245, 148, 184, 0.47);
-    box-shadow: 0px 0px 10px #f594b8;
+    border: 1px solid rgba(226, 223, 210, 0.45);
+    box-shadow: 0px 0px 10px #FFF5EE;
     left: -40px;
     top: -40px;
     -moz-transition: all 0.5s ease;
@@ -314,8 +314,8 @@
     width: 4px;
     height: 4px;
     border-radius: 100px;
-    background: #ff96c0;
-    box-shadow: 0px 0px 12px 2px #ff4e85;
+    background: #E2DFD2;
+    box-shadow: 0px 0px 12px 2px #E2DFD2;
     bottom: 0;
     opacity: 0;
     -moz-animation: sparkle 4s ease-in-out infinite;
@@ -539,25 +539,25 @@
       
       @-webkit-keyframes glowing {
         50% {
-          box-shadow: 0px 0px 60px #f594b8;
+          box-shadow: 0px 0px 60px #E2DFD2;
         }
       }
       
       @-moz-keyframes glowing {
         50% {
-          box-shadow: 0px 0px 60px #f594b8;
+          box-shadow: 0px 0px 60px #E2DFD2;
         }
       }
       
       @-ms-keyframes glowing {
         50% {
-          box-shadow: 0px 0px 60px #f594b8;
+          box-shadow: 0px 0px 60px #E2DFD2;
         }
       }
       
       @keyframes glowing {
         50% {
-          box-shadow: 0px 0px 60px #f594b8;
+          box-shadow: 0px 0px 60px #E2DFD2;
         }
       }
       
