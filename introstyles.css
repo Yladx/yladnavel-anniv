@@ -1,0 +1,758 @@
+ body {
+    height: 100%;
+      width: calc(100% - 20px); /* Adjust the width to leave 10px margin on each side */
+    background-color: whitesmoke;
+    background-size: cover;
+    overflow: hidden;
+  }
+
+
+  .card {
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    font-size: 40px;
+    margin: 10px;
+    flex: 10 0  90px; /* Set initial flex basis */
+    position: relative;
+    overflow: hidden; /* Hide overflowing content */
+  }
+  
+  .card img {
+    width: 100%; /* Adjust the width to leave 20px gap on each side */
+    height: 100%; /* Make the image fill the height of the .card */
+    object-fit: contain; /* Ensure the entire image fits within the container */
+    object-position: center; /* Center the image within the container */
+  
+  }
+
+  .cards-wrapper {
+    display: flex; 
+    
+    transition: ease 0.5s;
+  }
+  
+  .display-area {
+    opacity: 0.2; /* Set initial opacity */
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 20px solid black; /* Set the border color to black */
+    background-color: black; /* Set the background color to black */
+    border-top: 6px dashed #fff;
+    border-bottom: 6px dashed #fff;
+    overflow-x: hidden;
+  }
+  
+
+  .container {
+    width: 100px;
+    height: 300px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    -moz-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
+    background: #122139; /* Replace with your desired background color */
+  }
+  .container div {
+    position: absolute;
+  }
+  .container .glass {
+    height: 420px;
+    width: 250px;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    -moz-border-radius: 300px 300px 0px 0px;
+    -webkit-border-radius: 300px;
+    border-radius: 300px 300px 0px 0px;
+    left: -80px;
+    top: -100px;
+    border-bottom: 15px solid rgba(255, 255, 255, 0.5);
+    background:  #122139; /* Replace with your desired background color */
+  }
+  .container .glass:after {
+    width: 8px;
+    background: rgba(255, 255, 255, 0.28);
+    content: '';
+    position: absolute;
+    height: 80px;
+    top: 430px;
+    border-radius: 100px;
+    left: 10px;
+    top: 180px;
+  }
+  .container .glass:before {
+    width: 8px;
+    background: rgba(255, 255, 255, 0.28);
+    content: '';
+    position: absolute;
+    height: 15px;
+    top: 430px;
+    border-radius: 100px;
+    left: 10px;
+    top: 280px;
+  }
+  .container .glow {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    border: 1px solid rgba(245, 148, 184, 0.47);
+    box-shadow: 0px 0px 10px #f594b8;
+    left: -40px;
+    top: -40px;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -moz-animation: glowing 2.5s ease-in-out infinite;
+    -webkit-animation: glowing 2.5s ease-in-out infinite;
+    animation: glowing 2.5s ease-in-out infinite;
+  }
+  .container .rose-petals > div {
+    background: white;
+    width: 45px;
+    height: 80px;
+    position: absolute;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+  .container .rose-petals > div:nth-child(1) {
+    border-radius: 15px;
+    left: 20px;
+    top: -6px;
+    background: white;
+  }
+  .container .rose-petals > div:nth-child(2), .container .rose-petals > div:nth-child(4), .container .rose-petals > div:nth-child(6) {
+    border-radius: 0px 30px 0px 30px;
+    background: white;
+    left: 0;
+    transform-origin: bottom right;
+  }
+  .container .rose-petals > div:nth-child(3), .container .rose-petals > div:nth-child(5), .container .rose-petals > div:nth-child(7) {
+    border-radius: 30px 0px 30px 0px;
+    left: 40px;
+    transform-origin: bottom left;
+  }
+  .container .rose-petals > div:nth-child(2) {
+    -moz-animation: openRose2 3s ease-in-out;
+    -webkit-animation: openRose2 3s ease-in-out;
+    animation: openRose2 3s ease-in-out;
+    -moz-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    z-index: 5;
+    background: white;
+    top: 10px;
+    height: 70px;
+    -moz-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+  }
+  .container .rose-petals > div:nth-child(3) {
+    -moz-animation: openRose3 3s ease-in-out;
+    -webkit-animation: openRose3 3s ease-in-out;
+    animation: openRose3 3s ease-in-out;
+    -moz-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    z-index: 4;
+    background: white;
+    top: 10px;
+    height: 70px;
+    -moz-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+  }
+  .container .rose-petals > div:nth-child(4) {
+    -moz-animation: openRose4 3s ease-in-out;
+    -webkit-animation: openRose4 3s ease-in-out;
+    animation: openRose4 3s ease-in-out;
+    -moz-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    z-index: 3;
+    background: white;
+    top: 5px;
+    height: 75px;
+    -moz-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+  }
+  .container .rose-petals > div:nth-child(5) {
+    -moz-animation: openRose5 3s ease-in-out;
+    -webkit-animation: openRose5 3s ease-in-out;
+    animation: openRose5 3s ease-in-out;
+    -moz-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    z-index: 2;
+    background: white;
+    top: 5px;
+    height: 75px;
+    -moz-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+  }
+  .container .rose-petals > div:nth-child(6) {
+    -moz-animation: openRose6 3s ease-in-out;
+    -webkit-animation: openRose6 3s ease-in-out;
+    animation: openRose6 3s ease-in-out;
+    -moz-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    z-index: 1;
+    background: white;
+   
+    top: "";
+    height: "";
+    -moz-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+  }
+  .container .rose-petals > div:nth-child(7) {
+    -moz-animation: openRose7 3s ease-in-out;
+    -webkit-animation: openRose7 3s ease-in-out;
+    animation: openRose7 3s ease-in-out;
+    -moz-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    z-index: 0;
+    background: white;
+    top: "";
+    height: "";
+    -moz-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+  }
+  .container .rose-leaves > div:nth-last-child(1) {
+    width: 55px;
+    height: 30px;
+    background: #338f37;
+    position: absolute;
+    top: 60px;
+    left: 15px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+  }
+  .container .rose-leaves > div:nth-child(1) {
+    width: 6px;
+    height: 230px;
+    border: none;
+    top: 80px;
+    background: #066406;
+    left: 40px;
+  }
+  .container .thorns > div {
+    width: 30px;
+    height: 30px;
+    background: #066406;
+    top: 100px;
+    left: 10px;
+  }
+  .container .thorns > div:after {
+    width: 41px;
+    height: 31px;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    background: #122139;
+    content: "";
+    position: absolute;
+    left: -12px;
+    top: 17px;
+  }
+  .container .thorns > div:before {
+    width: 41px;
+    height: 31px;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    background: #122139;
+    content: "";
+    position: absolute;
+    left: -11px;
+    top: -11px;
+    z-index: 0;
+  }
+  .container .thorns > div:nth-child(2) {
+    top: 150px;
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    left: 45px;
+  }
+  .container .thorns > div:nth-child(3) {
+    top: 180px;
+  }
+  .container .thorns > div:nth-child(4) {
+    top: 220px;
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    left: 45px;
+  }
+  .container .sparkles {
+    bottom: -40px;
+  }
+  .container .sparkles > div {
+    width: 4px;
+    height: 4px;
+    border-radius: 100px;
+    background: #ff96c0;
+    box-shadow: 0px 0px 12px 2px #ff4e85;
+    bottom: 0;
+    opacity: 0;
+    -moz-animation: sparkle 4s ease-in-out infinite;
+    -webkit-animation: sparkle 4s ease-in-out infinite;
+    animation: sparkle 4s ease-in-out infinite;
+  }
+  .container .sparkles > div:nth-child(1) {
+    left: 60px;
+    -moz-animation-delay: 3s;
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+  }
+  .container .sparkles > div:nth-child(2) {
+    left: 158px;
+    -moz-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+  }
+  .container .sparkles > div:nth-child(3) {
+    left: -22px;
+    -moz-animation-delay: 1s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+  }
+  .container .sparkles > div:nth-child(4) {
+    left: 10px;
+    -moz-animation-delay: 1s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+  }
+  .container .sparkles > div:nth-child(5) {
+    left: 177px;
+    -moz-animation-delay: 3s;
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+  }
+  .container .sparkles > div:nth-child(6) {
+    left: -82px;
+    -moz-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+  }
+  .container .sparkles > div:nth-child(7) {
+    left: 45px;
+    -moz-animation-delay: 3s;
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+  }
+  .container .sparkles > div:nth-child(8) {
+    left: 74px;
+    -moz-animation-delay: 3s;
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+  }
+  .container .sparkles > div:nth-child(9) {
+    left: -79px;
+    -moz-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+  }
+      
+      @-webkit-keyframes sparkle {
+        50% {
+          opacity: 1;
+        }
+        100% {
+          bottom: 250px;
+        }
+      }
+      
+      @-moz-keyframes sparkle {
+        50% {
+          opacity: 1;
+        }
+        100% {
+          bottom: 250px;
+        }
+      }
+      
+      @-ms-keyframes sparkle {
+        50% {
+          opacity: 1;
+        }
+        100% {
+          bottom: 250px;
+        }
+      }
+      
+      @keyframes sparkle {
+        50% {
+          opacity: 1;
+        }
+        100% {
+          bottom: 250px;
+        }
+      }
+      
+      @-webkit-keyframes openRose2 {
+        50% {
+          transform: rotate(-90deg);
+          top: 80px;
+          left: 100px;
+        }
+        100% {
+          transform: rotate(-60deg);
+          top: 210px;
+          left: -30px;
+        }
+      }
+      
+      @-moz-keyframes openRose2 {
+        50% {
+          transform: rotate(-90deg);
+          top: 80px;
+          left: 100px;
+        }
+        100% {
+          transform: rotate(-60deg);
+          top: 210px;
+          left: -30px;
+        }
+      }
+      
+      @-ms-keyframes openRose2 {
+        50% {
+          transform: rotate(-90deg);
+          top: 80px;
+          left: 100px;
+        }
+        100% {
+          transform: rotate(-60deg);
+          top: 210px;
+          left: -30px;
+        }
+      }
+      
+      @keyframes openRose2 {
+        50% {
+          transform: rotate(-90deg);
+          top: 80px;
+          left: 100px;
+        }
+        100% {
+          transform: rotate(-60deg);
+          top: 210px;
+          left: -30px;
+        }
+      }
+      
+      @-webkit-keyframes openRose3 {
+        100% {
+          transform: rotate(60deg);
+        }
+      }
+      
+      @-moz-keyframes openRose3 {
+        100% {
+          transform: rotate(60deg);
+        }
+      }
+      
+      @-ms-keyframes openRose3 {
+        100% {
+          transform: rotate(60deg);
+        }
+      }
+      
+      @keyframes openRose3 {
+        100% {
+          transform: rotate(60deg);
+        }
+      }
+      
+      @-webkit-keyframes openRose4 {
+        100% {
+          transform: rotate(-30deg);
+        }
+      }
+      
+      @-moz-keyframes openRose4 {
+        100% {
+          transform: rotate(-30deg);
+        }
+      }
+      
+      @-ms-keyframes openRose4 {
+        100% {
+          transform: rotate(-30deg);
+        }
+      }
+      
+      @keyframes openRose4 {
+        100% {
+          transform: rotate(-30deg);
+        }
+      }
+      
+      @-webkit-keyframes openRose5 {
+        100% {
+          transform: rotate(30deg);
+        }
+      }
+      
+      @-moz-keyframes openRose5 {
+        100% {
+          transform: rotate(30deg);
+        }
+      }
+      
+      @-ms-keyframes openRose5 {
+        100% {
+          transform: rotate(30deg);
+        }
+      }
+      
+      @keyframes openRose5 {
+        100% {
+          transform: rotate(30deg);
+        }
+      }
+      
+      @-webkit-keyframes glowing {
+        50% {
+          box-shadow: 0px 0px 60px #f594b8;
+        }
+      }
+      
+      @-moz-keyframes glowing {
+        50% {
+          box-shadow: 0px 0px 60px #f594b8;
+        }
+      }
+      
+      @-ms-keyframes glowing {
+        50% {
+          box-shadow: 0px 0px 60px #f594b8;
+        }
+      }
+      
+      @keyframes glowing {
+        50% {
+          box-shadow: 0px 0px 60px #f594b8;
+        }
+      }
+      
+      
+  .page-wrapper {
+    width: 100%;
+    height: 100vh;
+    
+    position: relative; }
+
+    .page-wrapper .animation-wrapper {
+    
+      width: 100%;
+      height: 100%;
+      position: relative; }
+
+      .page-wrapper .animation-wrapper .animation-container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        display: flex;
+        z-index: 1; /* Set z-index for the page wrapper */
+        top: 0;
+        left: 0; }
+        .page-wrapper .animation-wrapper .animation-container:nth-child(1) > span {
+          animation-delay: 0ms; }
+        .page-wrapper .animation-wrapper .animation-container:nth-child(2) > span {
+          animation-delay: 3000ms; }
+        .page-wrapper .animation-wrapper .animation-container:nth-child(3) > span {
+          animation-delay: 6000ms; }
+        .page-wrapper .animation-wrapper .animation-container:nth-child(4) > span {
+          animation-delay: 9000ms; }
+        .page-wrapper .animation-wrapper .animation-container:nth-child(5) > span {
+          animation-delay: 12000ms; }
+          .page-wrapper .animation-wrapper .animation-container:nth-child(6) > span {
+            animation-delay: 15000ms; }
+            
+          .page-wrapper .animation-wrapper .animation-container .stay {
+          animation: inStay 3000ms forwards; }
+
+        .page-wrapper .animation-wrapper .animation-container > span {
+          color: black;
+          font-family: 'Goudy Old Style ';       
+          font-size: 20px;
+          margin-top: 290px; 
+          text-transform: uppercase;
+          transform: translateY(-30px);
+          opacity: 0;
+          animation: in 3000ms forwards;
+          display: block;
+          padding: 100px;
+          text-align: center; 
+          display: inline-block;
+          
+        }
+       
+  
+
+    
+
+              .page-wrapper .find-out-button {
+                pointer-events: auto;
+                color: black;
+                font-size: 13px;
+                text-decoration: none;
+                padding: 10px 20px;
+                border: 2px solid black;
+               position: absolute;       
+                top: 70%;
+                left:50%; /* Adjust the distance from the text */
+                transform: translate(-50%, -50%); /* Center the button */
+                max-width: 120px;
+                width: 80px; /* Fixed width */
+                height: 15px; /* Fixed height */
+                opacity: 0.5;
+                transition: opacity 0.5s ease; /* Add transition property for opacity */
+              }
+      .page-wrapper .find-out-button:hover {
+        opacity: 1.0; }
+  
+  @keyframes in {
+    0% {
+      transform: translateY(-30px);
+      opacity: 0; }
+    50% {
+      transform: translateY(0) rotateX(0);
+      opacity: 1; }
+    100% {
+      transform: translateY(30px);
+      opacity: 0; } }
+  
+  @keyframes inStay {
+    0% {
+      transform: translateY(-30px);
+      opacity: 0; }
+    100% {
+      transform: translateY(0) rotateX(0);
+      opacity: 1; } }
+  
+      .center{
+        display: flex;
+      } 
+      .back {
+          position: fixed;
+          padding: 0;
+          margin: 0;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: white;
+          animation-name: backdiv;
+          animation-duration: 1s; 
+          animation-iteration-count: infinite;
+        }
+      
+        .heart {
+          position: absolute;
+          margin: auto;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-color: pink;
+          height: 50px;
+          width: 50px;
+          transform: rotate(-45deg);
+          animation-name: beat;
+          animation-duration: 1s;
+          animation-iteration-count: infinite;
+        
+        }
+
+        .text-below {
+          color: black;
+          font-family: 'Goudy Old Style' ;
+          font-style: bold;
+          font-size: 20px;
+          position: fixed; /* Use 'fixed' to position it relative to the viewport */
+          top: 60%; /* Adjust the top position as needed */
+          left: 48%; /* Center the text horizontally */
+          transform: translateX(-50%) translateY(-50%); /* Center the text horizontally and vertically */
+          text-align: center;
+          padding: 20px; /* Adjust the padding as needed */
+          z-index: 999;
+          opacity: 0; /* Initially hidden */
+          animation: fadeIn 6s ease-out forwards; /* Animation definition */
+        }
+        
+        @keyframes fadeIn {
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+        .heart:after {
+          background-color: pink;
+          content: "";
+          border-radius: 50%;
+          position: absolute;
+          width: 50px;
+          height: 50px;
+          top: 0px;
+          left: 25px;
+        }
+        .heart:before {
+          background-color: pink;
+          content: "";
+          border-radius: 50%;
+          position: absolute;
+          width: 50px;
+          height: 50px;
+          top: -25px;
+          left: 0px;
+        }
+      
+        @keyframes backdiv {
+          50% {
+            background: whitesmoke;
+          }
+        }
+      
+        @keyframes beat {
+          0% {
+            transform: scale(1) rotate(-45deg);
+          }
+          50% {
+            transform: scale(0.6) rotate(-45deg);
+          }
+        }
+
+    
+      

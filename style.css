@@ -1,0 +1,176 @@
+/* Set the colour and the position of the background and the elements */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+
+canvas {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* Ensure the canvas doesn't interfere with other elements */
+}
+
+.valentines {
+  position: relative;
+  top: 50px;
+  cursor: pointer;
+  animation: up 3s linear infinite;
+}
+
+/* Style the envelope and the card */
+.envelope {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: white; /* Change this line to set the envelope color */
+}
+
+.envelope:before {
+  background-color: white; /* Change this line to set the envelope color */
+  content: "";
+  position: absolute;
+  width: 212px;
+  height: 212px;
+  transform: rotate(45deg);
+  top: -105px;
+  left: 44px;
+  border-radius: 30px 0 0 0;
+}
+
+
+.card {
+  position: absolute;
+  background-color: #f7f3e0; /* Adjust the alpha value as needed */
+  background-image: url('a.png');
+  background-size: cover; /* Adjust as needed */
+  background-position: center; /* Adjust as needed */
+  width: 270px;
+  height: 160px;
+  top: 5px;
+  left: 15px;
+  box-shadow: -5px -5px 100px rgba(0, 0, 0, 0.4);
+  z-index: 3;
+  overflow: hidden;
+ 
+
+ /* Dotted border styles for the pseudo-element */
+  &::after {
+    content: "";
+    position: absolute;
+    border: 1px solid grey;
+    width: calc(100% - 20px); /* Adjust width considering padding */
+    height: calc(100% - 20px); /* Adjust height considering padding */
+    top: 10px;
+    left: 10px;
+    box-sizing: border-box;
+  }
+}
+
+.card2 {
+  position: absolute;
+  background-color: #f7f3e0; /* Adjust the alpha value as needed */ 
+  width: 270px;
+  height: 160px;
+  top: 5px;
+  left: 15px;
+  box-shadow: -5px -5px 100px rgba(0, 0, 0, 0.4);
+  z-index: 1; /* Set a lower z-index to ensure card2 is initially behind card1 */
+  overflow: hidden;
+  
+  }
+
+.text {
+  position: absolute;
+  font-family:  'Goudy Old Style';
+  font-size: 12px;
+  text-align: center;
+  line-height: 13px;
+  top: 20px;
+  left: 15px;
+   right: 15px;
+  color: black;
+}
+
+.text2 {
+  position: absolute;
+  font-family:  'Goudy Old Style';
+  font-size: 12px;
+  text-align: justify;
+  line-height: 13px;
+  top: 20px;
+  margin: 45px;
+  left: 15px;
+   right: 15px;
+  color: black;
+}
+
+.front {
+  position: absolute;
+  border-right: 180px solid white; /* Change this line to set the front color */
+  border-top: 95px solid transparent;
+  border-bottom: 100px solid transparent;
+  left: 120px;
+  top: 5px;
+  width: 0;
+  height: 0;
+  z-index: 10;
+}
+
+.front:before {
+  position: absolute;
+  content: "";
+  border-left: 300px solid whitesmoke; /* Change this line to set the front color */
+  border-top: 195px solid transparent;
+  left: -120px;
+  top: -95px;
+  width: 0;
+  height: 0;
+}
+
+
+.shadow {
+  position: absolute;
+  width: 330px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  bottom: -100px; /* Adjust the bottom property to position the shadow below the envelope */
+  left: -3%;
+  transform: translateX(-50%);
+  animation: scale 3s linear infinite;
+  z-index: -1;
+}
+
+/* To move the envelope up and down */
+@keyframes up {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+/* to scale the shadow */
+@keyframes scale {
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.85);
+  }
+}
